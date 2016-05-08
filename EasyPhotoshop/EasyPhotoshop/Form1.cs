@@ -30,5 +30,11 @@ namespace EasyPhotoshop
             saveFileDialog1.ShowDialog();
             pictureBox1.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
         }
+
+        private void znakWodnyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
     }
 }

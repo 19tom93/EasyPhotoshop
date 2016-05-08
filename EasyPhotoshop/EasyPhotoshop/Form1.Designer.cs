@@ -90,6 +90,7 @@
             this.znakWodnyToolStripMenuItem.Name = "znakWodnyToolStripMenuItem";
             this.znakWodnyToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.znakWodnyToolStripMenuItem.Text = "Znak wodny";
+            this.znakWodnyToolStripMenuItem.Click += new System.EventHandler(this.znakWodnyToolStripMenuItem_Click);
             // 
             // filtrToolStripMenuItem
             // 
