@@ -14,7 +14,7 @@ namespace EasyPhotoshop
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();//test
         }
 
         private void otwórzToolStripMenuItem_Click(object sender, EventArgs e)
