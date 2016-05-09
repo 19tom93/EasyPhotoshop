@@ -43,8 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -80,16 +80,12 @@
             "16",
             "18",
             "20",
+            "22",
             "24",
-            "26",
             "28",
-            "30",
-            "32",
             "36",
-            "38",
-            "64",
-            "90",
-            "120"});
+            "48",
+            "72"});
             this.comboBox2.Location = new System.Drawing.Point(300, 81);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(125, 24);

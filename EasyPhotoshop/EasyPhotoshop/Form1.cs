@@ -17,6 +17,7 @@ namespace EasyPhotoshop
     {
         Color paintcolor;
         bool choose = false;
+
         public Form1()
         {
             InitializeComponent();//test
@@ -87,6 +88,7 @@ namespace EasyPhotoshop
 
         private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
         {
+
             if (choose)
             {
                 Bitmap bmp = (Bitmap)pictureBox3.Image.Clone();
