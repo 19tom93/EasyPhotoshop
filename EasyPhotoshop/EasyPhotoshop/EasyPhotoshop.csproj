@@ -74,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +88,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prostokąt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kółko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kreska.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paintbrush-153234_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tekst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
