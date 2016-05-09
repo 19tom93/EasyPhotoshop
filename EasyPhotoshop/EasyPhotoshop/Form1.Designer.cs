@@ -33,11 +33,6 @@
             this.otwórzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edycjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bezEfektówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.czarnoBiałyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sepiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.negatywToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wstawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.znakWodnyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -76,6 +71,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.filtyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.czarnoBiałyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sepiaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.negatywToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wyostrzenieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -97,7 +98,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
             this.edycjaToolStripMenuItem,
-            this.wstawToolStripMenuItem});
+            this.wstawToolStripMenuItem,
+            this.filtyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1020, 28);
@@ -129,46 +131,9 @@
             // 
             // edycjaToolStripMenuItem
             // 
-            this.edycjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filtrToolStripMenuItem});
             this.edycjaToolStripMenuItem.Name = "edycjaToolStripMenuItem";
             this.edycjaToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.edycjaToolStripMenuItem.Text = "Edycja";
-            // 
-            // filtrToolStripMenuItem
-            // 
-            this.filtrToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bezEfektówToolStripMenuItem,
-            this.czarnoBiałyToolStripMenuItem,
-            this.sepiaToolStripMenuItem,
-            this.negatywToolStripMenuItem});
-            this.filtrToolStripMenuItem.Name = "filtrToolStripMenuItem";
-            this.filtrToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
-            this.filtrToolStripMenuItem.Text = "Filtr";
-            // 
-            // bezEfektówToolStripMenuItem
-            // 
-            this.bezEfektówToolStripMenuItem.Name = "bezEfektówToolStripMenuItem";
-            this.bezEfektówToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.bezEfektówToolStripMenuItem.Text = "Bez efektów";
-            // 
-            // czarnoBiałyToolStripMenuItem
-            // 
-            this.czarnoBiałyToolStripMenuItem.Name = "czarnoBiałyToolStripMenuItem";
-            this.czarnoBiałyToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.czarnoBiałyToolStripMenuItem.Text = "Czarno - biały";
-            // 
-            // sepiaToolStripMenuItem
-            // 
-            this.sepiaToolStripMenuItem.Name = "sepiaToolStripMenuItem";
-            this.sepiaToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.sepiaToolStripMenuItem.Text = "Sepia";
-            // 
-            // negatywToolStripMenuItem
-            // 
-            this.negatywToolStripMenuItem.Name = "negatywToolStripMenuItem";
-            this.negatywToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.negatywToolStripMenuItem.Text = "Negatyw";
             // 
             // wstawToolStripMenuItem
             // 
@@ -506,6 +471,7 @@
             // toolStripComboBox3
             // 
             this.toolStripComboBox3.AutoSize = false;
+            this.toolStripComboBox3.IntegralHeight = false;
             this.toolStripComboBox3.Items.AddRange(new object[] {
             "Bold",
             "Italic",
@@ -541,6 +507,48 @@
             this.textBox1.Size = new System.Drawing.Size(56, 22);
             this.textBox1.TabIndex = 19;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // filtyToolStripMenuItem
+            // 
+            this.filtyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.barkToolStripMenuItem,
+            this.czarnoBiałyToolStripMenuItem1,
+            this.sepiaToolStripMenuItem1,
+            this.negatywToolStripMenuItem1,
+            this.wyostrzenieToolStripMenuItem});
+            this.filtyToolStripMenuItem.Name = "filtyToolStripMenuItem";
+            this.filtyToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.filtyToolStripMenuItem.Text = "Filty";
+            // 
+            // barkToolStripMenuItem
+            // 
+            this.barkToolStripMenuItem.Name = "barkToolStripMenuItem";
+            this.barkToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.barkToolStripMenuItem.Text = "Bark";
+            // 
+            // czarnoBiałyToolStripMenuItem1
+            // 
+            this.czarnoBiałyToolStripMenuItem1.Name = "czarnoBiałyToolStripMenuItem1";
+            this.czarnoBiałyToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.czarnoBiałyToolStripMenuItem1.Text = "Czarno - biały";
+            // 
+            // sepiaToolStripMenuItem1
+            // 
+            this.sepiaToolStripMenuItem1.Name = "sepiaToolStripMenuItem1";
+            this.sepiaToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.sepiaToolStripMenuItem1.Text = "Sepia";
+            // 
+            // negatywToolStripMenuItem1
+            // 
+            this.negatywToolStripMenuItem1.Name = "negatywToolStripMenuItem1";
+            this.negatywToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.negatywToolStripMenuItem1.Text = "Negatyw";
+            // 
+            // wyostrzenieToolStripMenuItem
+            // 
+            this.wyostrzenieToolStripMenuItem.Name = "wyostrzenieToolStripMenuItem";
+            this.wyostrzenieToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.wyostrzenieToolStripMenuItem.Text = "Wyostrzenie";
             // 
             // Form1
             // 
@@ -581,11 +589,6 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem edycjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wstawToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filtrToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bezEfektówToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem czarnoBiałyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sepiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem negatywToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem znakWodnyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otwórzToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zapiszToolStripMenuItem;
@@ -625,6 +628,12 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
+        private System.Windows.Forms.ToolStripMenuItem filtyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem barkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem czarnoBiałyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sepiaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem negatywToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem wyostrzenieToolStripMenuItem;
     }
 }
 
