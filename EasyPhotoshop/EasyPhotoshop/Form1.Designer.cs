@@ -77,6 +77,7 @@
             this.sepiaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.negatywToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wyostrzenieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -109,6 +110,7 @@
             // plikToolStripMenuItem
             // 
             this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nowyToolStripMenuItem,
             this.otwórzToolStripMenuItem,
             this.zapiszToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
@@ -550,6 +552,13 @@
             this.wyostrzenieToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.wyostrzenieToolStripMenuItem.Text = "Wyostrzenie";
             // 
+            // nowyToolStripMenuItem
+            // 
+            this.nowyToolStripMenuItem.Name = "nowyToolStripMenuItem";
+            this.nowyToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.nowyToolStripMenuItem.Text = "Nowy";
+            this.nowyToolStripMenuItem.Click += new System.EventHandler(this.nowyToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -634,6 +643,7 @@
         private System.Windows.Forms.ToolStripMenuItem sepiaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem negatywToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem wyostrzenieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nowyToolStripMenuItem;
     }
 }
 

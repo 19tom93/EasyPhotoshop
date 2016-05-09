@@ -104,5 +104,11 @@ namespace EasyPhotoshop
                 pictureBox2.BackColor = paintcolor;
             }
         }
+
+        private void nowyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Refresh();
+            pictureBox1.Image = null;
+        }
     }
 }
