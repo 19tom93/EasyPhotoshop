@@ -110,5 +110,10 @@ namespace EasyPhotoshop
             pictureBox1.Refresh();
             pictureBox1.Image = null;
         }
+
+        private void wyjścieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
