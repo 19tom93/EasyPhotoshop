@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
 using System.IO;
+using AForge.Imaging.Filters;
 
 namespace EasyPhotoshop
 {
@@ -20,7 +21,7 @@ namespace EasyPhotoshop
 
         public Form1()
         {
-            InitializeComponent();//test
+            InitializeComponent();
         }
 
         private void otwórzToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +115,54 @@ namespace EasyPhotoshop
         private void wyjścieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void wyostrzenieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            Sharpen FiltrSharp = new Sharpen();
+            FiltrSharp.ApplyInPlace(bmp);
+            pictureBox1.Image = bmp;
+        }
+
+        private void negatywToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            Invert FiltrInvert = new Invert();
+            //FiltrInvert.ApplyInPlace(bmp); bo coś nie działa
+            pictureBox1.Image = bmp;
+        }
+
+        private void czarnoBiałyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            Grayscale FiltrGray= new Grayscale(0.2,0.2,0.2); // te liczby troche z dupy
+            bmp = FiltrGray.Apply(bmp);
+            pictureBox1.Image = bmp;
+        }
+
+        private void sepiaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            Sepia FiltrSepia = new Sepia();
+            FiltrSepia.ApplyInPlace(bmp);
+            pictureBox1.Image = bmp;
+        }
+
+        private void większyKontrastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            ContrastCorrection FiltrKontrast = new ContrastCorrection();
+            FiltrKontrast.ApplyInPlace(bmp);
+            pictureBox1.Image = bmp;
+        }
+
+        private void rozmyjToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            Blur FiltrBlur = new Blur();
+            FiltrBlur.ApplyInPlace(bmp);
+            pictureBox1.Image = bmp;
         }
     }
 }
