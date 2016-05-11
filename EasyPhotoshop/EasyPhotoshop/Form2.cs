@@ -21,5 +21,15 @@ namespace EasyPhotoshop
         {
             textBox2.Text = Convert.ToString(trackBar1.Value);
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //czcionki
+            FontFamily[] family = FontFamily.Families;
+            foreach (FontFamily font in family)
+            {
+                comboBox1.Items.Add(font.GetName(1).ToString());
+            }
+        }
     }
 }

@@ -59,9 +59,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Arial",
-            "TimesNewRoma"});
             this.comboBox1.Location = new System.Drawing.Point(12, 81);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(258, 24);
@@ -235,6 +232,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form2";
             this.Text = "Znak wodny";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
