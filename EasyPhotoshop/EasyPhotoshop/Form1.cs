@@ -22,9 +22,11 @@ namespace EasyPhotoshop
         int x, y, lx, ly = 0;
         Item currItem;
 
+
         public Form1()
         {
             InitializeComponent();
+            paintcolor = pictureBox2.BackColor;
         }
 
         public enum Item
@@ -351,8 +353,22 @@ namespace EasyPhotoshop
         private void negatywToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Bitmap bmp = new Bitmap(pictureBox1.Image);
-            Invert FiltrInvert = new Invert();
+            //Invert FiltrInvert = new Invert();
             //FiltrInvert.ApplyInPlace(bmp); bo coś nie działa
+            //FiltrInvert.ApplyInPlace(bmp);
+            //pictureBox1.Image = bmp;
+            for(int x = 0; x < bmp.Width; x++)
+            {
+                for(int y = 0; y < bmp.Height; y++)
+                {
+                    Color pixel = bmp.GetPixel(x, y);
+                    int red = pixel.R;
+                    int green = pixel.G;
+                    int blue = pixel.B;
+
+                    bmp.SetPixel(x, y, Color.FromArgb(255 - red, 255 - green, 255 - blue));
+                }
+            }
             pictureBox1.Image = bmp;
         }
 
@@ -390,6 +406,12 @@ namespace EasyPhotoshop
             Blur FiltrBlur = new Blur();
             FiltrBlur.ApplyInPlace(bmp);
             pictureBox1.Image = bmp;
+        }
+
+        //grubość pędzla
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            textBox1.Text = hScrollBar1.Value.ToString();
         }
 
 
