@@ -12,6 +12,7 @@ namespace EasyPhotoshop
 {
     public partial class Form2 : Form
     {
+
         public Form2()
         {
             InitializeComponent();
@@ -30,6 +31,13 @@ namespace EasyPhotoshop
             {
                 comboBox1.Items.Add(font.GetName(1).ToString());
             }
+        }
+        //wstawianie
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //Bitmap bmp = new Bitamp(PictureBox.Image);
+            //Font font = new Font(FontFamily.GenericMonospace, 30.0F, FontStyle.Bold);
         }
     }
 }

@@ -19,9 +19,11 @@ namespace EasyPhotoshop
         Color paintcolor;
         bool choose = false;
         bool draw = false;
+        bool czyjestobrazek = false;
         int x, y, lx, ly = 0;
         Item currItem;
-
+        private Bitmap originalBitmap = null;
+        //bool czybylfiltr = false;
 
         public Form1()
         {
@@ -44,11 +46,20 @@ namespace EasyPhotoshop
         //otwórz
         private void otwórzToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Pilk graficzny|*.jpg*";
-            openFileDialog1.ShowDialog();
-            pictureBox1.ImageLocation = openFileDialog1.FileName;
-        }
+            OpenFileDialog otworz = new OpenFileDialog();
+            otworz.Title = "Otworz plik graficzny.";
+            otworz.Filter = "(*.png)|*.png|(*.jpg)|*.jpg";
+            otworz.Filter += "|(*.bmp)|*.bmp";
 
+            if (otworz.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader streamReader = new StreamReader(otworz.FileName);
+                originalBitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
+                streamReader.Close();
+                pictureBox1.ImageLocation = otworz.FileName;
+                czyjestobrazek = true;
+            }
+        }
         //zapisz
         private void zapiszToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -212,7 +223,7 @@ namespace EasyPhotoshop
             y = e.Y;
         }
 
-        //rysowanie obsługa
+        //rysowanie obsługa AAAAAAAA
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             draw = false;
@@ -320,6 +331,7 @@ namespace EasyPhotoshop
             if (draw)
             {
                 Graphics g = pictureBox1.CreateGraphics();
+
                 switch (currItem)
                 {
                     case Item.Rectange:
@@ -339,73 +351,125 @@ namespace EasyPhotoshop
             }
         }
 
+        //Cofnij
+        private void cofnijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // pictureBox1.Image = previousBitmap;
+        }
+
         //FILTRY
+
         //filtr wyostrzenie
         private void wyostrzenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            Sharpen FiltrSharp = new Sharpen();
-            FiltrSharp.ApplyInPlace(bmp);
-            pictureBox1.Image = bmp;
+            if (czyjestobrazek == false)
+            {
+                MessageBox.Show("Wstaw wpierw obrazek!");
+            }
+            else
+            {
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+                Sharpen FiltrSharp = new Sharpen();
+                bmp = FiltrSharp.Apply(bmp);
+                pictureBox1.Image = bmp;
+            }
         }
 
         //filtr negatyw
         private void negatywToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            //Invert FiltrInvert = new Invert();
-            //FiltrInvert.ApplyInPlace(bmp); bo coś nie działa
-            //FiltrInvert.ApplyInPlace(bmp);
-            //pictureBox1.Image = bmp;
-            for(int x = 0; x < bmp.Width; x++)
+            if (czyjestobrazek == false)
             {
-                for(int y = 0; y < bmp.Height; y++)
-                {
-                    Color pixel = bmp.GetPixel(x, y);
-                    int red = pixel.R;
-                    int green = pixel.G;
-                    int blue = pixel.B;
-
-                    bmp.SetPixel(x, y, Color.FromArgb(255 - red, 255 - green, 255 - blue));
-                }
+                MessageBox.Show("Wstaw wpierw obrazek!");
             }
-            pictureBox1.Image = bmp;
+            else
+            {
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    for (int y = 0; y < bmp.Height; y++)
+                    {
+                        Color pixel = bmp.GetPixel(x, y);
+                        int red = pixel.R;
+                        int green = pixel.G;
+                        int blue = pixel.B;
+
+                        bmp.SetPixel(x, y, Color.FromArgb(255 - red, 255 - green, 255 - blue));
+                    }
+                }
+                pictureBox1.Image = bmp;
+            }
         }
 
         //filtr czarno-biał
         private void czarnoBiałyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            Grayscale FiltrGray = new Grayscale(0.2, 0.2, 0.2); // te liczby troche z dupy
-            bmp = FiltrGray.Apply(bmp);
-            pictureBox1.Image = bmp;
+            if (czyjestobrazek == false)
+            {
+                MessageBox.Show("Wstaw wpierw obrazek!");
+            }
+            else
+            {
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+                Grayscale FiltrGray = new Grayscale(0.2, 0.2, 0.2); // te liczby troche z dupy
+                bmp = FiltrGray.Apply(bmp);
+                pictureBox1.Image = bmp;
+            }
         }
 
         //filtr sepia
         private void sepiaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            Sepia FiltrSepia = new Sepia();
-            FiltrSepia.ApplyInPlace(bmp);
-            pictureBox1.Image = bmp;
+            if (czyjestobrazek == false)
+            {
+                MessageBox.Show("Wstaw wpierw obrazek!");
+            }
+            else
+            {
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+                Sepia FiltrSepia = new Sepia();
+                FiltrSepia.ApplyInPlace(bmp);
+                pictureBox1.Image = bmp;
+            }
+        }
+
+        // cofniecie filtru
+        private void barkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = originalBitmap;
         }
 
         //filtr większy kontrast
         private void większyKontrastToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            ContrastCorrection FiltrKontrast = new ContrastCorrection();
-            FiltrKontrast.ApplyInPlace(bmp);
-            pictureBox1.Image = bmp;
+            if (czyjestobrazek == false)
+            {
+                MessageBox.Show("Wstaw wpierw obrazek!");
+            }
+            else
+            {
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+                ContrastCorrection FiltrKontrast = new ContrastCorrection(15);
+                FiltrKontrast.ApplyInPlace(bmp);
+                pictureBox1.Image = bmp;
+            }
+
         }
 
         //filtr rozmycie
         private void rozmyjToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Image);
-            Blur FiltrBlur = new Blur();
-            FiltrBlur.ApplyInPlace(bmp);
-            pictureBox1.Image = bmp;
+            if (czyjestobrazek == false)
+            {
+                MessageBox.Show("Wstaw wpierw obrazek!");
+            }
+            else
+            {
+                Bitmap bmp = new Bitmap(pictureBox1.Image);
+                Blur FiltrBlur = new Blur();
+                bmp = FiltrBlur.Apply(bmp);
+                pictureBox1.Image = bmp;
+            }
         }
 
         //grubość pędzla
@@ -413,7 +477,5 @@ namespace EasyPhotoshop
         {
             textBox1.Text = hScrollBar1.Value.ToString();
         }
-
-
     }
 }
