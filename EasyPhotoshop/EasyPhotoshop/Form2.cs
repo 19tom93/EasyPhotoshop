@@ -52,7 +52,9 @@ namespace EasyPhotoshop
             int i = 0;
             int j = 0;
             wodnyznak.DrawString("Znak wodny", font, sb, i, j);
-
+            Image gotowy = (Image)bmp;
+            Form1 form1 = new Form1(gotowy);
+            bmp.Save("C:\\Users\\MICZO\\Downloads\\test2.jpg");
         }
     }
 }

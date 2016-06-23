@@ -24,11 +24,20 @@ namespace EasyPhotoshop
         Item currItem;
         private Bitmap originalBitmap = null;
         //bool czybylfiltr = false;
+        private Image znaczekwodny;
 
         public Form1()
         {
             InitializeComponent();
             paintcolor = pictureBox2.BackColor;
+        }
+
+        public Form1(Image image)
+        {
+            InitializeComponent();
+            this.znaczekwodny = image;
+            pictureBox1.Image = image;
+
         }
 
         public enum Item
