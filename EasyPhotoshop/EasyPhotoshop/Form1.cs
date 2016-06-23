@@ -37,7 +37,6 @@ namespace EasyPhotoshop
             InitializeComponent();
             this.znaczekwodny = image;
             pictureBox1.Image = image;
-
         }
 
         public enum Item
@@ -149,7 +148,7 @@ namespace EasyPhotoshop
 
         }
 
-        //sówak czerwony
+        //suwak czerwony
         private void red_Scroll(object sender, EventArgs e)
         {
             paintcolor = Color.FromArgb(alpha.Value, red.Value, green.Value, blue.Value);
@@ -157,7 +156,7 @@ namespace EasyPhotoshop
             label2.Text = paintcolor.R.ToString();
         }
 
-        //sówak zielony
+        //suwak zielony
         private void green_Scroll(object sender, EventArgs e)
         {
             paintcolor = Color.FromArgb(alpha.Value, red.Value, green.Value, blue.Value);
@@ -165,7 +164,7 @@ namespace EasyPhotoshop
             label3.Text =paintcolor.G.ToString();
         }
 
-        //sówak niebieski
+        //suwak niebieski
         private void blue_Scroll(object sender, EventArgs e)
         {
             paintcolor = Color.FromArgb(alpha.Value, red.Value, green.Value, blue.Value);
@@ -173,7 +172,7 @@ namespace EasyPhotoshop
             label5.Text = paintcolor.B.ToString();
         }
 
-        //sówak aplha
+        //suwak aplha
         private void alpha_Scroll(object sender, EventArgs e)
         {
             paintcolor = Color.FromArgb(alpha.Value, red.Value, green.Value, blue.Value);

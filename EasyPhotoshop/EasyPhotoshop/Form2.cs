@@ -45,16 +45,32 @@ namespace EasyPhotoshop
         {
 
             Bitmap bmp = (Bitmap)obrazek;
-            //to wszystko tylko przykladowe
+            //to wszystko tylko przykladowe [poza tekstem]
             Font font = new Font(FontFamily.GenericMonospace, 30.0F, FontStyle.Bold);
             Graphics wodnyznak = Graphics.FromImage(bmp);
             SolidBrush sb = new SolidBrush(Color.FromArgb(70, Color.White));
             int i = 0;
             int j = 0;
-            wodnyznak.DrawString("Znak wodny", font, sb, i, j);
-            Image gotowy = (Image)bmp;
-            Form1 form1 = new Form1(gotowy);
-            bmp.Save("C:\\Users\\MICZO\\Downloads\\test2.jpg");
+            string tekst = textBox1.Text.ToString();
+            if (string.IsNullOrEmpty(tekst))
+                {
+                MessageBox.Show("Brak tekstu!");
+            }
+            else {
+                //Font font = cvt.ConvertFromString(s) as Font;
+
+                wodnyznak.DrawString(tekst, font, sb, i, j);
+                Image gotowy = (Image)bmp;
+                Form1 form1 = new Form1(gotowy);
+                form1.Show();
+            }
         }
     }
 }
+/*TO DO
+LEPSZE PRZEJSCIE Z FORM 2 NA FORM 1, ALBO USUNIECIE FORM 1 STAREGO
+ROZMIAR
+CZCIONKA
+KOLOR
+POLOZENIE
+PRZEZROCZYSTOSC

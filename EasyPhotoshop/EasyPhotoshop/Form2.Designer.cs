@@ -52,7 +52,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(9, 26);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(310, 20);
             this.textBox1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(9, 66);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(194, 21);
             this.comboBox1.TabIndex = 1;
@@ -86,7 +86,7 @@
             "48",
             "72"});
             this.comboBox2.Location = new System.Drawing.Point(225, 66);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(95, 21);
             this.comboBox2.TabIndex = 2;
@@ -104,7 +104,7 @@
             "Fioletowy",
             "Brązowy"});
             this.comboBox3.Location = new System.Drawing.Point(9, 113);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(142, 21);
             this.comboBox3.TabIndex = 3;
@@ -119,7 +119,7 @@
             "Prawy  dolny róg",
             "Środek"});
             this.comboBox4.Location = new System.Drawing.Point(169, 113);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(151, 21);
             this.comboBox4.TabIndex = 4;
@@ -198,7 +198,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(274, 175);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(24, 20);
             this.textBox2.TabIndex = 12;
@@ -208,7 +208,7 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(11, 175);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(260, 45);
@@ -218,7 +218,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(203, 211);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 27);
             this.button1.TabIndex = 14;
@@ -246,7 +246,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Znak wodny";
             this.Load += new System.EventHandler(this.Form2_Load);
