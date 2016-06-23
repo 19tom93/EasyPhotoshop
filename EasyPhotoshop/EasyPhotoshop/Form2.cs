@@ -12,12 +12,20 @@ namespace EasyPhotoshop
 {
     public partial class Form2 : Form
     {
+        private Image obrazek;
 
         public Form2()
         {
             InitializeComponent();
         }
 
+        public Form2(Image image)
+        {
+            InitializeComponent();
+            this.obrazek = image;
+        }
+
+        //przezroczystosc znaku
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             textBox2.Text = Convert.ToString(trackBar1.Value);
@@ -36,8 +44,15 @@ namespace EasyPhotoshop
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //Bitmap bmp = new Bitamp(PictureBox.Image);
-            //Font font = new Font(FontFamily.GenericMonospace, 30.0F, FontStyle.Bold);
+            Bitmap bmp = (Bitmap)obrazek;
+            //to wszystko tylko przykladowe
+            Font font = new Font(FontFamily.GenericMonospace, 30.0F, FontStyle.Bold);
+            Graphics wodnyznak = Graphics.FromImage(bmp);
+            SolidBrush sb = new SolidBrush(Color.FromArgb(70, Color.White));
+            int i = 0;
+            int j = 0;
+            wodnyznak.DrawString("Znak wodny", font, sb, i, j);
+
         }
     }
 }

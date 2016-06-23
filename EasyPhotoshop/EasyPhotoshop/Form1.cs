@@ -131,8 +131,8 @@ namespace EasyPhotoshop
         //otwieranie manu znak wodny
         private void znakWodnyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
-            f.Show();
+            Form2 form2 = new Form2(pictureBox1.Image);
+            form2.Show();
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
